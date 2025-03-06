@@ -160,7 +160,7 @@ class DRDetectionApp(App):
             Window.size = (400, 700)
             Window.clearcolor = get_color_from_hex(BLACK)  # Black background
             
-            # Create screens
+            
             background_screen = BackgroundScreen(name='background')
             main_screen = MainScreen(name='main')
             
