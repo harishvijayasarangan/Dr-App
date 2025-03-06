@@ -127,7 +127,7 @@ class BackgroundScreen(Screen):
         layout.add_widget(float_layout)
         self.add_widget(layout)
         
-        # Bind buttons to app methods
+        # Bind buttons to app
         gallery_btn.bind(on_press=self.show_file_chooser)
         camera_btn.bind(on_press=self.show_camera)
     
