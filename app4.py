@@ -54,8 +54,8 @@ def transform_image(image_path):
         return np.expand_dims(img_array, axis=0).astype(np.float32)
 
 class CustomProgressBar(Widget):
-    value = NumericProperty(0.0)  # Specify as float
-    max = NumericProperty(100.0)  # Specify as float
+    value = NumericProperty(0.0)  
+    max = NumericProperty(100.0)  
     background_color = ListProperty([0.1, 0.1, 0.1, 1])  # Dark background
     color = ListProperty([1, 0.6, 0, 1])  # Orange color
 
@@ -123,7 +123,7 @@ class BackgroundScreen(Screen):
         button_layout.size_hint = (0.9, 0.1)
         float_layout.add_widget(button_layout)
         
-        # Add float layout to main layout
+        
         layout.add_widget(float_layout)
         self.add_widget(layout)
         
