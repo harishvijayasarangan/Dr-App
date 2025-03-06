@@ -15,7 +15,7 @@ BLACK = '#121212'
 WHITE = '#FFFFFF'
 
 class ModernButton(Button):
-    scale = NumericProperty(1.0)  # Add scale property
+    scale = NumericProperty(1.0)  # Add scale propertyy
     
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -90,9 +90,9 @@ class ModernButton(Button):
     def on_state(self, widget, value):
         self.canvas_color.rgba = get_color_from_hex(DARK_ORANGE) if value == 'down' else get_color_from_hex(ORANGE)
 
-class CustomLabel(BoxLayout):  # Change from Label to BoxLayout
+class CustomLabel(BoxLayout):  # Change from Label to BoxLay
     def __init__(self, **kwargs):
-        # Extract label properties before calling super
+        
         self.label_text = kwargs.pop('text', '')
         self.label_color = kwargs.pop('color', get_color_from_hex(ORANGE))
         self.label_font_size = kwargs.pop('font_size', '16sp')

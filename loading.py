@@ -22,7 +22,7 @@ class LoadingSpinner(Widget):
             PopMatrix()
         
         Clock.schedule_once(self.start_spinning, 0)
-    
+    # end 
     def start_spinning(self, *args):
         anim = Animation(angle=360, duration=1)
         anim.repeat = True

@@ -214,7 +214,7 @@ class DRDetectionApp(App):
         self.img_container.add_widget(self.img_display)
         self.layout.add_widget(self.img_container)
         
-        # Results right below image
+       
         self.result_label = CustomLabel(
             size_hint_y=0.90,  # Results take 45% too
             size_hint_x=1,  # Full width
@@ -229,8 +229,7 @@ class DRDetectionApp(App):
             spacing=10,
             padding=[10, 0, 10, 5]
         )
-        # ...rest of button layout code...
-
+       
     # Add new method for updating rectangle
     def _update_rect(self, instance, value):
         self.img_bg.pos = instance.pos
@@ -364,7 +363,7 @@ class DRDetectionApp(App):
                 "[size=28]"  # Increased base size from 24 to 28
             ]
 
-            # Create a vertical layout for each result
+        
             from kivy.uix.boxlayout import BoxLayout
             results_layout = BoxLayout(
                 orientation='vertical',
