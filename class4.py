@@ -19,13 +19,9 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.5353, 0.3628, 0.2486], std=[0.2126, 0.1586, 0.1401])
 ])
-
-
 def predict(image):
     image = Image.open(image).convert("RGB")
     image = transform(image).unsqueeze(0).numpy()
-
-    # Run inference
     outputs = session.run(None, {"input": image})
     prediction = torch.nn.functional.softmax(torch.tensor(outputs[0]), dim=1).squeeze(0)
 
