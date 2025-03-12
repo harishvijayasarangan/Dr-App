@@ -13,11 +13,7 @@ if not os.path.exists(onnx_path):
     raise FileNotFoundError(f"❌ ONNX model file not found: {onnx_path}")
 
 session = ort.InferenceSession(onnx_path, providers=["CUDAExecutionProvider" if device == "cuda" else "CPUExecutionProvider"])
-
-# Class names
 classes = ["No DR", "Mild", "Moderate", "Severe", "Proliferative DR"]
-
-# Preprocessing transformations
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
