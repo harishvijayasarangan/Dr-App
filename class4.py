@@ -5,11 +5,8 @@ import torchvision.transforms as transforms
 from PIL import Image
 import os
 import torch
-# Set device
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"🔥 Using device: {device}")
-
-# Load ONNX model
 onnx_path = r"C:\Users\STIC-11\Desktop\Sk2\checkpoints\model.onnx"
 
 if not os.path.exists(onnx_path):
