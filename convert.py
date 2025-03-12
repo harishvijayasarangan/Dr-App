@@ -1,16 +1,13 @@
 import torch
 import torchvision.models as models
 import os
-
-# Define the same model architecture
 model = models.densenet121(weights=None)
 model.classifier = torch.nn.Linear(1024, 5)
 
-# Load the trained weights
 model_path = r"C:\Users\STIC-11\Desktop\Sk2\checkpoints\best_model.ckpt"
 
 if not os.path.exists(model_path):
-    raise FileNotFoundError(f"❌ Model file not found: {model_path}")
+    raise FileNotFoundError(f" Model file not found: {model_path}")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.load_state_dict(torch.load(model_path, map_location=device))
@@ -31,4 +28,4 @@ torch.onnx.export(
     output_names=["output"]
 )
 
-print(f"✅ Model successfully converted to ONNX and saved at: {onnx_path}")
+print(f" Model successfully converted to ONNX and saved at: {onnx_path}")
