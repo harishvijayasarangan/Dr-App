@@ -3,8 +3,6 @@ import numpy as np
 import gradio as gr
 from PIL import Image
 import os
-
-# Check for CUDA availability
 device = "cuda" if ort.get_device() == "GPU" else "cpu"
 print(f"Using device: {device}")
 
