@@ -6,7 +6,7 @@ import os
 device = "cuda" if ort.get_device() == "GPU" else "cpu"
 print(f"Using device: {device}")
 
-# ONNX Model Path
+
 onnx_path = r"/Users/macm1/Desktop/HUB/dr-onnx/dr-model.onnx"
 
 if not os.path.exists(onnx_path):
@@ -15,7 +15,7 @@ if not os.path.exists(onnx_path):
 # Load ONNX Model
 session = ort.InferenceSession(onnx_path, providers=["CUDAExecutionProvider" if device == "cuda" else "CPUExecutionProvider"])
 
-# Class Labels
+
 classes = ["No DR", "Mild", "Moderate", "Severe", "Proliferative DR"]
 
 # Mean and Std for Normalization
