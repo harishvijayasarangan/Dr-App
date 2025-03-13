@@ -22,7 +22,7 @@ classes = ["No DR", "Mild", "Moderate", "Severe", "Proliferative DR"]
 mean = np.array([0.5353, 0.3628, 0.2486], dtype=np.float32)
 std = np.array([0.2126, 0.1586, 0.1401], dtype=np.float32)
 
-# Preprocessing Function
+# image Preprocessing
 def preprocess(image_path):
     image = Image.open(image_path).convert("RGB")
     image = image.resize((224, 224))  # Resize to 224x224
@@ -45,7 +45,7 @@ def predict(image_path):
     confidences = {classes[i]: float(prediction[0, i]) for i in range(len(classes))}
     return confidences
 
-# Gradio Interface
+
 interface = gr.Interface(
     fn=predict,
     inputs=gr.Image(type="filepath"),
